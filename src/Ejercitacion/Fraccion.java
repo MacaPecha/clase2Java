@@ -5,7 +5,16 @@ public class Fraccion {
     private int denominador;
 
     public Fraccion(){
+    }
 
+    public Fraccion(int numerador, int denominador) {
+        this.numerador = numerador;
+        this.denominador = denominador;
+    }
+
+    public Fraccion(Fraccion f) {
+        this.numerador = f.getNumerador();
+        this.denominador = f.getDenominador();
     }
 
     public int getNumerador() {
@@ -25,7 +34,7 @@ public class Fraccion {
     }
 
     public double resultado(){
-        return this.getNumerador()/(double)this.getDenominador();
+        return this.numerador/(double)this.denominador;
     }
 
     public static double sumar(int a, int b){
@@ -44,10 +53,6 @@ public class Fraccion {
         return f1.resultado()+ f2.resultado();
     }
 
-/*    public double sumar(double a){ // creo que esto no va
-        return a + this.getValor();
-    }*/
-
     public static double restar(int a, int b){
         return a-b;
     }
@@ -63,10 +68,6 @@ public class Fraccion {
     public static double restar(Fraccion f1, Fraccion f2){
         return f1.resultado()- f2.resultado();
     }
-
-/*    public double restar(double a){ // creo que esto no va
-        return a - this.getValor();
-    }*/
 
     public static double dividir(int a, int b){
         return a/(double)b;
@@ -84,12 +85,6 @@ public class Fraccion {
         return f1.resultado()/f2.resultado();
     }
 
-/*
-    public double dividir(double a){ // creo que esto no va
-        return a / this.getValor();
-    }
-*/
-
     public static double multiplicar(int a, int b){
         return a*b;
     }
@@ -105,10 +100,6 @@ public class Fraccion {
     public static double multiplicar(Fraccion f1, Fraccion f2){
         return f1.resultado()*f2.resultado();
     }
-
-/*    public double multiplicar(double a){ // creo que esto no va
-        return a * this.getValor();
-    }*/
 
     public static void main(String[] args) {
         Fraccion f1 = new Fraccion();

@@ -1,57 +1,52 @@
 package Ejercitacion;
 
 public class CuentaCorriente {
-    private double ingreso;
-    private double egreso;
-    private double reintegro;
-    private double transferencia;
+    private int numeroCuenta;
+    private double saldo;
+
+    public CuentaCorriente(int numeroCuenta, double saldo) {
+        this.numeroCuenta = numeroCuenta;
+        this.saldo = saldo;
+    }
 
     public CuentaCorriente() {
     }
 
-    public CuentaCorriente(double ingreso, double egreso, double reintegro, double transferencia) {
-        this.ingreso = ingreso;
-        this.egreso = egreso;
-        this.reintegro = reintegro;
-        this.transferencia = transferencia;
-    }
-
     public CuentaCorriente(CuentaCorriente cc) {
-        this.ingreso = cc.ingreso;
-        this.egreso = cc.egreso;
-        this.reintegro = cc.reintegro;
-        this.transferencia = cc.transferencia;
+        this.numeroCuenta = cc.getNumeroCuenta();
+        this.saldo = cc.getSaldo();
     }
 
-    public double getIngreso() {
-        return ingreso;
+    public int getNumeroCuenta() {
+        return numeroCuenta;
     }
 
-    public void setIngreso(double ingreso) {
-        this.ingreso = ingreso;
+    public void setNumeroCuenta(int numeroCuenta) {
+        this.numeroCuenta = numeroCuenta;
     }
 
-    public double getEgreso() {
-        return egreso;
+    public double getSaldo() {
+        return saldo;
     }
 
-    public void setEgreso(double egreso) {
-        this.egreso = egreso;
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 
-    public double getReintegro() {
-        return reintegro;
+    public void ingreso(double ingreso){
+        this.saldo = this.saldo + ingreso;
     }
 
-    public void setReintegro(double reintegro) {
-        this.reintegro = reintegro;
+    public void egreso(double egreso){
+        this.saldo = this.saldo - egreso;
     }
 
-    public double getTransferencia() {
-        return transferencia;
+    public void reintegro(double reintegro) {
+        this.ingreso(reintegro);
     }
 
-    public void setTransferencia(double transferencia) {
-        this.transferencia = transferencia;
+    public void transferencia (CuentaCorriente cc, double monto){
+        cc.ingreso(monto);
+        this.saldo = this.saldo - monto;
     }
 }
