@@ -1,25 +1,22 @@
-package Practica;
+package Ejercitacion;
 
 public class CuentaCorriente {
     private int numeroCuenta;
     private double saldo;
-
-    //region constructores
-    public CuentaCorriente() {
-    }
 
     public CuentaCorriente(int numeroCuenta, double saldo) {
         this.numeroCuenta = numeroCuenta;
         this.saldo = saldo;
     }
 
+    public CuentaCorriente() {
+    }
+
     public CuentaCorriente(CuentaCorriente cc) {
         this.numeroCuenta = cc.getNumeroCuenta();
         this.saldo = cc.getSaldo();
     }
-    //endregion
 
-    //region getters & setters
     public int getNumeroCuenta() {
         return numeroCuenta;
     }
@@ -36,9 +33,6 @@ public class CuentaCorriente {
         this.saldo = saldo;
     }
 
-    //endregion
-
-    //region public functions
     public void ingreso(double ingreso){
         this.saldo = this.saldo + ingreso;
     }
@@ -55,6 +49,4 @@ public class CuentaCorriente {
         cc.ingreso(monto);
         this.saldo = this.saldo - monto;
     }
-
-    //endregion
 }
