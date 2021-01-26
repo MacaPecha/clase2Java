@@ -1,4 +1,4 @@
-package Ejercitacion;
+package Practica;
 
 public class Fraccion {
     private int numerador;
